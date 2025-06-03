@@ -55,3 +55,20 @@ def all_ingredients():
         print(ingredient)
 
 all_ingredients()
+
+
+
+# Simple Travel App
+
+# Ask the user for their travel destination
+destination = input("Where would you like to travel? ")
+
+# Check the input against predefined destinations
+if destination.lower() == "paris":
+    print("Enjoy your stay in Paris!")
+elif destination.lower() == "tokyo":
+    print("Enjoy your stay in Tokyo!")
+elif destination.lower() == "new york":
+    print("Enjoy your stay in New York!")
+else:
+    print("Oops, that destination is not currently available.")
