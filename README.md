@@ -1,45 +1,15 @@
-# Intro to Python Course
+Recipe App Data Structures
+Overview
+This repository contains the implementation of basic data structures to store recipe information for a Recipe app. Each recipe includes attributes such as name, cooking time, and ingredients. Multiple recipes are stored sequentially to allow easy management and expansion.
 
-This repository contains my exercises and deliverables for the Intro to Python course.
+Data Structure Choices
+For storing individual recipe information, I chose a dictionary because it allows clear association of keys (name, cooking_time, ingredients) to their respective values. Dictionaries provide flexibility for modifying, adding, or removing attributes in the future, which is important as the app grows.
 
-## Repository Structure
+To store multiple recipes in an ordered fashion, I used a list named all_recipes. Lists preserve the order of insertion and allow easy addition, removal, or iteration through recipes. This sequential structure is ideal for handling collections of items like recipes, which may be accessed or updated frequently.
 
-- **Exercise 1.1/**  
-  Contains files related to Exercise 1.1 such as scripts, requirements, screenshots, and learning journal.
+Summary
+Individual Recipe: Dictionary — allows key-value pairing and flexibility.
 
-## What I Have Done So Far
+Collection of Recipes: List — maintains order and supports dynamic modification.
 
-- **Set up Python Environment:**  
-  Installed Python 3.8.7 and configured virtual environments using `virtualenvwrapper-win`. Created a base virtual environment named `cf-python-base` for managing Python packages.
-
-- **Created Python Script:**  
-  Developed a simple script `add.py` that takes two numbers as input from the user, adds them, and prints the result.
-
-- **Installed and Used IPython:**  
-  Installed the `ipython` package inside my virtual environment to enhance the interactive Python shell experience with features like syntax highlighting and autocomplete.
-
-- **Generated Requirements File:**  
-  Used `pip freeze > requirements.txt` to create a requirements file listing all installed packages in my environment for easy replication.
-
-- **Set Up Second Virtual Environment:**  
-  Created another virtual environment called `cf-python-copy` and installed all required packages from `requirements.txt` to ensure consistent environment setup.
-
-- **Organized Project Folder:**  
-  Created folders for exercises inside my project directory to keep deliverables (scripts, screenshots, journals, etc.) well-structured.
-
-- **Started Using Git and GitHub:**  
-  Initialized Git in my project folder, connected it to a remote GitHub repository, and pushed my code and folders for version control and collaboration.
-
-## Learning Journal
-
-Each exercise folder includes a learning journal documenting what I have learned and my coding experience for that exercise.
-
-## How to Use
-
-- Navigate to the exercise folder you want to review.
-- Open scripts or documents related to that exercise.
-- Run Python scripts within their respective virtual environments if applicable.
-
----
-
-_Feel free to reach out if you want to discuss any part of this work!_
+This design balances readability, usability, and scalability for future app development.

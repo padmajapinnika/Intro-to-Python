@@ -1,0 +1,7 @@
+Answers
+
+1. str3[3:]     → 'lo, how are you?'
+2. str3[-3:]    → 'u?'
+3. str3[2:9:3]  → 'l,o'
+4. str3[::-2]   → '?ua w,o,lh'
+5. str3[2:8]    → 'llo, h'
