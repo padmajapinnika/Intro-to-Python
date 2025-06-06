@@ -22,7 +22,7 @@ Download or clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/recipe-app.git
+git clone https://github.com/padmajapinnika/recipe-app.git
 Navigate to the project folder:
 
 bash
