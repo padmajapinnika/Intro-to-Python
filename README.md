@@ -1,54 +1,88 @@
-Recipe App
-Overview
-This Recipe App is built using Object-Oriented Programming (OOP) principles in Python. It models recipes as objects, each containing details such as the recipe name, ingredients, cooking time, and difficulty level. The app also supports searching recipes by ingredients and tracks all unique ingredients across recipes.
+# 🧑‍🍳 Recipe Manager CLI App
 
-Features
-Create and manage recipes as objects with attributes and methods.
+A simple command-line interface (CLI) application written in Python that allows users to **create**, **search**, **update**, **delete**, and **view** recipes stored in a MySQL database. Each recipe includes a name, list of ingredients, cooking time, and a difficulty level automatically calculated.
 
-Calculate recipe difficulty based on cooking time and number of ingredients.
+## 📦 Features
 
-Add ingredients to existing recipes dynamically.
+- Add new recipes to a MySQL database
+- View all saved recipes
+- Search for recipes by ingredient
+- Update recipe details (name, ingredients, cooking time)
+- Automatically calculate difficulty level
+- Delete recipes
 
-Search recipes by ingredient (case-insensitive).
+## 🛠️ Technologies Used
 
-Track all unique ingredients used in all recipes.
+- Python 3
+- MySQL
+- `mysql-connector-python` package
 
-Use OOP concepts like encapsulation, inheritance, and polymorphism for clean and reusable code.
+## 📋 Difficulty Calculation Logic
 
-Installation
-Make sure you have Python installed (version 3.x recommended).
+```python
+if cooking_time < 10 and number_of_ingredients < 4:
+    difficulty = "Easy"
+elif cooking_time < 10 and number_of_ingredients >= 4:
+    difficulty = "Medium"
+elif cooking_time >= 10 and number_of_ingredients < 4:
+    difficulty = "Intermediate"
+else:
+    difficulty = "Hard"
+```
 
-Download or clone the repository:
+🧰 Prerequisites
+Python 3 installed
 
-bash
-Copy code
-git clone https://github.com/padmajapinnika/recipe-app.git
-Navigate to the project folder:
+MySQL Server running locally
 
-bash
-Copy code
-cd recipe-app
-Run the main Python script:
+mysql-connector-python installed
 
-bash
-Copy code
+Install it using pip:
+pip install mysql-connector-python
+
+🚀 How to Run
+1.Clone this repository or copy the script files.
+
+2.Ensure your MySQL server is running with the correct credentials:
+
+conn = mysql.connector.connect(
+host="localhost",
+user="cf-python",
+password="password"
+)
+3.Run the script:
 python recipe_app.py
-Usage
-The app defines a Recipe class. Create instances by providing the name, list of ingredients, and cooking time.
+Follow the interactive menu to:
 
-Use methods to add ingredients, calculate difficulty, or search for recipes by ingredient.
+Create new recipes
 
-Example:
+Search by ingredients
 
-python
-Copy code
-tea = Recipe("Tea", ["Tea Leaves", "Sugar", "Water"], 5)
-print(tea)
-tea.add_ingredients("Lemon")
-print(tea.search_ingredient("lemon")) # True
-Reflection on Object-Oriented Programming
-OOP organizes code by grouping data and behavior into objects created from classes.
+Update or delete recipes
 
-Benefits include modularity, reusability, scalability, encapsulation, and abstraction.
+View all recipes
+📸 Example
+Main Menu:
 
-The app demonstrates key OOP concepts: classes and objects, inheritance, polymorphism, and operator overloading.
+1. Create a new recipe
+2. Search for a recipe by ingredient
+3. Update an existing recipe
+4. Delete a recipe
+5. View all recipes
+   Type 'quit' to exit the program.
+   📁 Database Schema
+   Table: Recipes
+
+Column Type
+id INT (PK, AI)
+name VARCHAR(50)
+ingredients VARCHAR(255)
+cooking_time INT
+difficulty VARCHAR(20)
+
+🧑 Author
+Padmaja – Full Stack Developer in training
+
+Happy Cooking! 🍽️
+
+---
