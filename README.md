@@ -1,88 +1,74 @@
-# 🧑‍🍳 Recipe Manager CLI App
+# Recipe Manager App
 
-A simple command-line interface (CLI) application written in Python that allows users to **create**, **search**, **update**, **delete**, and **view** recipes stored in a MySQL database. Each recipe includes a name, list of ingredients, cooking time, and a difficulty level automatically calculated.
+A command-line application built with Python and SQLAlchemy to manage recipes in a MySQL database. Users can create, view, search, update, and delete recipes.
 
 ## 📦 Features
 
-- Add new recipes to a MySQL database
-- View all saved recipes
-- Search for recipes by ingredient
-- Update recipe details (name, ingredients, cooking time)
-- Automatically calculate difficulty level
-- Delete recipes
+- Add new recipes with cooking time and ingredients
+- Automatically calculates recipe difficulty
+- View all recipes
+- Search recipes by ingredients
+- Edit existing recipes (name, ingredients, cooking time)
+- Delete recipes from the database
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- Python 3
+- Python 3.x
+- SQLAlchemy (ORM)
 - MySQL
-- `mysql-connector-python` package
+- PyMySQL
 
-## 📋 Difficulty Calculation Logic
+## ⚙️ Setup Instructions
 
-```python
-if cooking_time < 10 and number_of_ingredients < 4:
-    difficulty = "Easy"
-elif cooking_time < 10 and number_of_ingredients >= 4:
-    difficulty = "Medium"
-elif cooking_time >= 10 and number_of_ingredients < 4:
-    difficulty = "Intermediate"
-else:
-    difficulty = "Hard"
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/padmajapinnika/recipe-manager.git
+cd recipe-manager
 ```
 
-🧰 Prerequisites
-Python 3 installed
+### 2. Create and Activate a Virtual Environment
 
-MySQL Server running locally
+python -m venv venv
 
-mysql-connector-python installed
+# Windows:
 
-Install it using pip:
-pip install mysql-connector-python
+venv\Scripts\activate
 
-🚀 How to Run
-1.Clone this repository or copy the script files.
+# macOS/Linux:
 
-2.Ensure your MySQL server is running with the correct credentials:
+source venv/bin/activate
 
-conn = mysql.connector.connect(
-host="localhost",
-user="cf-python",
-password="password"
-)
-3.Run the script:
+### 3. Install Dependencies
+
+pip install sqlalchemy pymysql
+
+### 4. Set Up the MySQL Database
+
+CREATE DATABASE task_database;
+The app will automatically create a table named final_recipes on the first run.
+
+### 5. Run the Application
+
 python recipe_app.py
-Follow the interactive menu to:
 
-Create new recipes
+### 🧪 Example Recipes to Try
 
-Search by ingredients
+## Chickpea Curry
 
-Update or delete recipes
+Cooking Time: 35
+Ingredients: Chickpeas, Onion, Tomato, Garlic, Garam masala, Salt
 
-View all recipes
-📸 Example
-Main Menu:
+## Masala Dosa
 
-1. Create a new recipe
-2. Search for a recipe by ingredient
-3. Update an existing recipe
-4. Delete a recipe
-5. View all recipes
-   Type 'quit' to exit the program.
-   📁 Database Schema
-   Table: Recipes
+Cooking Time: 25
+Ingredients: Rice, Urad dal, Potato, Mustard seeds, Curry leaves, Salt
 
-Column Type
-id INT (PK, AI)
-name VARCHAR(50)
-ingredients VARCHAR(255)
-cooking_time INT
-difficulty VARCHAR(20)
+## Paneer Butter Masala
 
-🧑 Author
-Padmaja – Full Stack Developer in training
+Cooking Time: 30
+Ingredients: Paneer, Tomato, Butter, Cream, Garam masala, Onion
 
-Happy Cooking! 🍽️
+### 📝 License
 
----
+This project is for educational purposes only.
